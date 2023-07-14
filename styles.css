@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.square {
+  background-color: ;
+}
+
+.container {
+  border: 2px solid black;
+  width: 500px;
+  height: 500px;
+  user-select: none;
+}
