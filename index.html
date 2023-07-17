@@ -7,22 +7,37 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css">
     <script src="index.js" defer></script>
+    <link rel="icon" type="image/png" href="./images/brushLogo.png">
 </head>
 <body>
-  <h1>Etch-a-Sketch</h1>
-  <div class="btnContainer">
-    <button id="picker">Pick: <input type="color" id="colorpicker" value="#000000"></button> 
-    <button id="black">Default Black</button>
-    <button id="random">Random</button>
-    <button id="eraser">Eraser</button>
-    <button id="small">Small</button>
-    <button id="medium">Medium</button>
-    <button id="large">Large</button>
-    <button id="toggle">Toggle Grid</button>
-    <button id="clear">Clear</button>
+  <div class="header">
+    <h1>Etch-a-Sketch</h1>
+  </div>
+  <div class="layout">
+    <div class="btnContainer">
+      <button id="picker">Pick: <input type="color" id="colorpicker" value="#1463F3"></button> 
+      <div class="selection">
+        <button id="black">Default black</button>
+        <button id="random">Rainbow</button>
+        <button id="eraser">Eraser</button>
+      </div>
+      <div class="size">
+        <button id="small">Small Grid</button>
+        <button id="medium">Medium Grid</button>
+        <button id="large">Large Grid</button>
+      </div>
+      <div class="options">
+        <button id="toggle">Toggle Grid Lines</button>
+        <button id="clear">Clear</button>
+      </div>
+    </div>
+    <div class="container"></div>
   </div>
 
-  <div class="container"></div>
-    
+  <div class="footer">
+    <a onclick="window.open('https://github.com/jerrybach98')"><img src="./images/github-mark.png" class="gitLogo" alt="GitHub logo and link"></a>
+    <div onclick="window.open('https://github.com/jerrybach98')" class="github">GitHub</div>
+  </div>
+
 </body>
 </html>

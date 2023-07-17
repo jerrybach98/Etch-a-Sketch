@@ -1,16 +1,109 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
+  background-color: #ccd0d8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0px;
+  height: 100vh;
+  font-size: 26px;
+  color: #1d2023;
 }
 
-.square {
+.header {
+  font-size: 30px;
+  font-family: cursive;
+}
 
+.header, .footer {
+  background-color:
+}
+
+h1 {
+
+}
+
+button {
+  margin-top: 5px;
+  height: 40px;
+  width: 200px;
+  border-radius: 2px;
+  background-color: white;
+  transition-duration: 0.1s;
+  border: 2px solid #1463F3;
+  color: #1d2023;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #84a4fc;
+  color: white;
+  transform: scale(1.1);
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+}
+
+.btnContainer {
+  margin-right: 50px;
+  padding: 20px;
+}
+
+
+.layout {
+//  border: 1px solid blue;
+  margin-bottom: 20px;
+}
+
+.selection, .size, .options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .container {
-  border: 2px solid black;
+  border: 1px solid #1463F3;
   width: 500px;
   height: 500px;
   user-select: none;
+  box-shadow: 0px 3px 8px #84a4fc;
+}
+
+.selection, .size {
+ // border: 1px solid red;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #84a4fc;
+  padding: 10px;
+  width: 100%;
+  flex: 0 0 30px;
+  margin-top: auto;
+}
+
+.gitLogo {
+  height: 20px;
+  width: 20px;
+  margin-right: 3px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.gitLogo:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.github {
+  font-size: 20px;
+  margin-left: 3px;
+}
+
+.github:hover, .gitLogo:hover{
+  cursor: pointer;
 }

@@ -26,9 +26,6 @@ function getSize (userInput) {
     clearGrid()
     makeGrid(userInput);
     draw ();
-    if (color === "white") {
-      color = "black";
-    }
   }
 };
 
@@ -54,9 +51,13 @@ function draw () {
   const squares = document.querySelectorAll('.square, .div');
   squares.forEach(square => {
     square.addEventListener('mousedown', function(event) {
-      if (mouseIsDown = true && color==="random" && (square.style.backgroundColor==="white" || square.style.backgroundColor==="black")) {
+      if (mouseIsDown = true && color==="random") {
         event.target.style.backgroundColor=`hsl(${Math.random() * 360}, 100%, 50%)`;
       }
+      else if (mouseIsDown = true && color==="shader"){
+        //event.target.style.filter=brightness(0.5);
+        square.classList.add('shader');
+      } 
       else if (mouseIsDown = true){
         event.target.style.backgroundColor=`${color}`}
     });
@@ -67,7 +68,7 @@ function draw () {
     });
     
     square.addEventListener('mouseenter', function(event) {
-      if(event.buttons === 1 && color==="random" && (square.style.backgroundColor==="white" || square.style.backgroundColor==="black")) {
+      if(event.buttons === 1 && color==="random") {
         event.target.style.backgroundColor=`hsl(${Math.random() * 360}, 100%, 50%)`;
       }
       else if (event.buttons === 1){
@@ -109,9 +110,12 @@ function draw () {
 };
 
 //Even listeners for color buttons
-const black = document.getElementById("black");
+//const black = document.getElementById("black");
 const eraser = document.getElementById("eraser");
 const random = document.getElementById("random");
+const shader = document.getElementById("shader");
+const picker = document.getElementById("picker");
+const colorPicker = document.getElementById("colorpicker");
 let color = "black";
 
 black.addEventListener('click', function() {
@@ -124,12 +128,16 @@ random.addEventListener('click', function() {
   color = "random";
 });
 
+colorPicker.addEventListener('input',function() {
+   color = colorPicker.value;
+   console.log(color);
+});
+
 makeGrid(16);
 draw ();
 
-// small, medium, large, clear while on eraser, set color back to pick / default
-  //if color white, set to default black?
-//custom color selector with preview
-// footer 
+
+//default, toggle, fix pick:
+  // turn off when pick, rainbow, eraser
 // decorate buttons, move around
-// page design / font 
+// header, page design / font 
