@@ -4,18 +4,36 @@ const medium = document.getElementById("medium");
 const large = document.getElementById("large");
 small.addEventListener('click', function() {
   let userInput = "16"
+  small.style.backgroundColor="#84a4fc";
+  small.style.color="white";
+  medium.style.backgroundColor="white";
+  medium.style.color="black";
+  large.style.backgroundColor="white";
+  large.style.color="black";
   getSize (userInput);
 });
 medium.addEventListener('click', function() {
   let userInput = "32"
+  medium.style.backgroundColor="#84a4fc";
+  medium.style.color="white";
+  small.style.backgroundColor="white";
+  small.style.color="black";
+  large.style.backgroundColor="white";
+  large.style.color="black";
   getSize (userInput);
 });
 large.addEventListener('click', function() {
   let userInput = "64"
+  large.style.backgroundColor="#84a4fc";
+  large.style.color="white";
+  small.style.backgroundColor="white";
+  small.style.color="black";
+  medium.style.backgroundColor="white";
+  medium.style.color="black";
   getSize (userInput);
 });
 
-//Clears previous HTML gridlines to insert new ones
+//Clears previous grid to insert new one
 function clearGrid() {
   container.innerHTML = '';
 }
@@ -97,6 +115,8 @@ function draw () {
 //Toggles grid lines
   const toggle = document.getElementById("toggle");
   toggle.addEventListener('click', function() {
+    toggle.style.backgroundColor="#84a4fc";
+    toggle.style.color="white";
     squares.forEach( square => {
       const borderStyle = square.style.border.trim().toLowerCase();
       if (borderStyle === "1px solid lightgrey") {
@@ -110,34 +130,69 @@ function draw () {
 };
 
 //Even listeners for color buttons
-//const black = document.getElementById("black");
+const selector = document.getElementsByClassName("selector");
+const toggleContainer = document.getElementById("toggleContainer");
+const black = document.getElementById("black");
 const eraser = document.getElementById("eraser");
 const random = document.getElementById("random");
 const shader = document.getElementById("shader");
-const picker = document.getElementById("picker");
-const colorPicker = document.getElementById("colorpicker");
+const colorpicker = document.getElementById("colorpicker");
+const toggle = document.getElementById("toggle");
+const clear = document.getElementById("clear");
 let color = "black";
 
+//Toggle on startup
+window.addEventListener("load", (event) => {
+  black.style.backgroundColor="#84a4fc";
+  black.style.color="white";
+  small.style.backgroundColor="#84a4fc";
+  small.style.color="white";
+});
+
+//Toggle style when clicked
 black.addEventListener('click', function() {
   color = "black";
+  black.style.backgroundColor="#84a4fc";
+  black.style.color="white";
+  random.style.backgroundColor="white";
+  random.style.color="black";
+  eraser.style.backgroundColor="white";
+  eraser.style.color="black";
 });
 eraser.addEventListener('click', function() {
-  color = "white";
+  color = "white"
+  eraser.style.backgroundColor="#84a4fc";
+  eraser.style.color="white";
+  random.style.backgroundColor="white";
+  random.style.color="black";
+  black.style.backgroundColor="white";
+  black.style.color="black";
 });
 random.addEventListener('click', function() {
   color = "random";
+  random.style.backgroundColor="#84a4fc";
+  random.style.color="white";
+  eraser.style.backgroundColor="white";
+  eraser.style.color="black";
+  black.style.backgroundColor="white";
+  black.style.color="black";
 });
 
-colorPicker.addEventListener('input',function() {
-   color = colorPicker.value;
-   console.log(color);
+colorpicker.addEventListener('input',function() {
+  color = colorpicker.value;
+  random.style.backgroundColor="white";
+  random.style.color="black";
+  eraser.style.backgroundColor="white";
+  eraser.style.color="black";
+  black.style.backgroundColor="white";
+  black.style.color="black";
 });
+
 
 makeGrid(16);
 draw ();
 
 
-//default, toggle, fix pick:
-  // turn off when pick, rainbow, eraser
+//Pick:
 // decorate buttons, move around
 // header, page design / font 

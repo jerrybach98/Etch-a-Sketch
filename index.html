@@ -15,11 +15,16 @@
   </div>
   <div class="layout">
     <div class="btnContainer">
-      <button id="picker">Pick: <input type="color" id="colorpicker" value="#1463F3"></button> 
+      <div class="pickContainer">
+        <div id="picker">Custom: </div> 
+        <div id="toggleContainer">
+          <input type="color" id="colorpicker" value="#1463F3"></input>
+        </div>
+      </div>
       <div class="selection">
-        <button id="black">Default black</button>
-        <button id="random">Rainbow</button>
-        <button id="eraser">Eraser</button>
+        <button class="selector" id="black">Default black</button>
+        <button class="selector" id="random">Rainbow</button>
+        <button class="selector" id="eraser">Eraser</button>
       </div>
       <div class="size">
         <button id="small">Small Grid</button>
