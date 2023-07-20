@@ -129,7 +129,7 @@ function draw () {
 
 };
 
-//Even listeners for color buttons
+//Event listeners for buttons
 const selector = document.getElementsByClassName("selector");
 const toggleContainer = document.getElementById("toggleContainer");
 const black = document.getElementById("black");
@@ -141,7 +141,7 @@ const toggle = document.getElementById("toggle");
 const clear = document.getElementById("clear");
 let color = "black";
 
-//Toggle on startup
+//Toggle default buttons on startup
 window.addEventListener("load", (event) => {
   black.style.backgroundColor="#84a4fc";
   black.style.color="white";
@@ -149,7 +149,7 @@ window.addEventListener("load", (event) => {
   small.style.color="white";
 });
 
-//Toggle style when clicked
+//Change drawing style when clicked and toggles/untoggles respective buttons
 black.addEventListener('click', function() {
   color = "black";
   black.style.backgroundColor="#84a4fc";
@@ -191,8 +191,3 @@ colorpicker.addEventListener('input',function() {
 
 makeGrid(16);
 draw ();
-
-
-//Pick:
-// decorate buttons, move around
-// header, page design / font 
