@@ -126,7 +126,7 @@ function draw () {
       };
     });
   });
-
+  
 };
 
 //Event listeners for buttons
